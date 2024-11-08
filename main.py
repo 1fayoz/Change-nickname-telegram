@@ -44,7 +44,7 @@ async def update_profile():
     while True:
         current_nickname = nicknames[index]
 
-        await client(UpdateProfileRequest(first_name=f"{current_nickname}  {datetime.datetime.now().strftime('%H:%M')} " ))
+        await client(UpdateProfileRequest(first_name=f"{current_nickname}  {datetime.datetime.now().strftime('%H:%M') + datetime.timedelta(hours=4)} " ))
         print(f"Nickname updated to: {current_nickname}")
 
         index = (index + 1) % len(nicknames)
